@@ -1,0 +1,6 @@
+@SdaemonAPIProject_HostAddress = http://localhost:5187
+
+GET {{SdaemonAPIProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
