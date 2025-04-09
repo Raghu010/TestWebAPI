@@ -22,6 +22,18 @@ namespace SdaemonAPIProject.Controllers
             var allData = context.creates.ToList();
             return Ok(allData);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetSingleData(int id)
+        {
+            CreateEF foundData = context.creates.Find(id);
+            if (foundData == null) 
+            {
+                return NotFound();
+            }
+            return Ok(foundData);
+        }
+
         [HttpPost]
         public IActionResult AddData(CreateEFAddDto create)
         {
