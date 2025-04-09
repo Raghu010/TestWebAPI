@@ -65,5 +65,19 @@ namespace SdaemonAPIProject.Controllers
             context.SaveChanges();
             return Ok(foundData);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id) 
+        {
+            var dataFound = context.creates.Find(id);
+            if (dataFound is null)
+            {
+                return NotFound();
+            }
+            context.creates.Remove(dataFound);
+            context.SaveChanges();
+
+            return Ok();
+        }
     }
 }
