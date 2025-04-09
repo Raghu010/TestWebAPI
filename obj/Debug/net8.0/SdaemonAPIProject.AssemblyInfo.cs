@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SdaemonAPIProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd95947b2afab3e7dfb43b331e47c78a8891b827")]
 [assembly: System.Reflection.AssemblyProductAttribute("SdaemonAPIProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SdaemonAPIProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
