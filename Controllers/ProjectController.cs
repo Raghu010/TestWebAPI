@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SdaemonAPIProject.Data;
+using SdaemonAPIProject.Model;
 using SdaemonAPIProject.Model.Entities;
 
 namespace SdaemonAPIProject.Controllers
@@ -21,11 +22,20 @@ namespace SdaemonAPIProject.Controllers
             var allData = context.creates.ToList();
             return Ok(allData);
         }
+        [HttpPost]
+        public IActionResult AddData(CreateEFAddDto create)
+        {
+            var createEntity = new CreateEF
+            {
+                Title = create.Title, 
+                Description = create.Description,
+                DueDate = create.DueDate, 
+                IsComplete = create.IsComplete
+            };
 
-        //[HttpGet]
-        //public CreateEF GetSingleData(int Id)
-        //{
-        //    return context.creates.Find(Id);
-        //}
+            context.creates.Add(createEntity);
+            context.SaveChanges();
+            return StatusCode(201, createEntity);
+        }
     }
 }
