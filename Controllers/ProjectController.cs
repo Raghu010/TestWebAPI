@@ -49,5 +49,21 @@ namespace SdaemonAPIProject.Controllers
             context.SaveChanges();
             return StatusCode(201, createEntity);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateData(int id, UpdateDto updateDto)
+        {
+            var foundData = context.creates.Find(id);
+            if (foundData is null)
+            {
+                return NotFound();
+            }
+            foundData.Title = updateDto.Title;
+            foundData.Description = updateDto.Description;
+            foundData.DueDate = updateDto.DueDate;
+            foundData.IsComplete = updateDto.IsComplete;
+            context.SaveChanges();
+            return Ok(foundData);
+        }
     }
 }
